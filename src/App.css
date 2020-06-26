@@ -1,0 +1,149 @@
+@font-face {
+  font-family: "RobotoMono";
+  src: url("./fonts/RobotoMono-Thin.ttf");
+}
+
+:root {
+  --primary-color: #61dafb;
+  --gray: #666;
+}
+
+body {
+  height: 100vh;
+  background-color: #282c34;
+  color: var(--primary-color);
+  font-family: "RobotoMono", monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+}
+
+.calculator {
+  width: 45vw;
+  height: 65vh;
+  border: 1px solid var(--gray);
+  display: grid;
+  grid-template-rows: 5% 25% 70%;
+}
+
+.calculator-body {
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: 60% 40%;
+}
+
+.calculator .title {
+  font-size: 0.65rem;
+  padding: 6px;
+  font-weight: bold;
+  color: #888;
+  background-color: #222;
+}
+
+.calculator-display {
+  padding: 20px;
+  overflow: auto;
+  display: grid;
+  align-items: flex-end;
+  justify-content: flex-end;
+  border-bottom: 1px solid var(--gray);
+}
+
+.display-main {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: right;
+}
+
+.display .display-memory {
+  font-size: 1em;
+  font-weight: normal;
+  color: #888;
+}
+
+.calculator .keyboard {
+  display: grid;
+  align-content: flex-start;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(6, 16.66%);
+}
+
+.button {
+  background-color: #000;
+  color: #fff;
+  font-size: 1.4rem;
+  border: 1px solid #282c34;
+  outline: none;
+  font-family: "RobotoMono", monospace;
+}
+
+.button.new-row {
+  grid-column-start: 1;
+}
+
+.button.column-3 {
+  grid-column-start: 3;
+}
+
+.button.column-4 {
+  grid-column-start: 4;
+}
+
+.button.span-column-2 {
+  grid-column: span 2;
+}
+
+.button.span-row-2 {
+  grid-row: span 2;
+}
+
+.button.nan {
+  background-color: #222;
+}
+
+.button:active,
+.button.nan:active,
+.button:hover,
+.button.nan:hover {
+  background-color: #444;
+}
+
+.calculator-history {
+  text-align: right;
+}
+
+.history-title {
+  padding: 5px;
+  font-size: 0.7rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.history-title Button{
+  font-size: 1rem;
+  margin-left: 10px;
+}
+
+.history-body{
+  font-size: 0.9rem;
+}
+
+.history-body ul {
+  margin: 0;
+}
+
+.history-body ul li{
+  list-style: none;
+  padding-right: 5px;
+}
